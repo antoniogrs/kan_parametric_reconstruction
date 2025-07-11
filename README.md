@@ -49,7 +49,7 @@ For example, the best prediction of the second-best model `EFFNETB0_UNLOCK_DROP_
 
 The comparison between the worst predictions of the two top-performing models instead revealed that the best one is `EFFNETB0_UNLOCK_DROP_FOURIER_6`:
 
-|![Real mesh](imgs/tab_real_mesh.png)|![Fourier_6](imgs/tab_fourier.png)|![EfficientKan_6](imgs/tab_effkan.png)|
+|![Real mesh](imgs/tab_real_mesh.png)|![Fourier_6](imgs/tab_fourier.jpg)|![EfficientKan_6](imgs/tab_effkan.jpg)|
 |:-:|:-:|:-:|
 |Real Mesh|Fourier_6|EfficientKan_6|
 
@@ -86,9 +86,13 @@ The dataset must be downloaded separately from Zenodo at the following link. Aft
 The script  `main.py` allows you to either train new networks or evaluate them both through metrics and visually.
 Before evaluating, the network must be trained by uncommenting the following block of code:
 ```python 
-# 2) Results visualization # It’s essential to run the render in Blender first to have the image name! 
+# 2) Results visualization
+#It’s essential to run the render in Blender first to have the image name!
+img_data = IMG_MAP.get(nome)
 
-img_data = IMG_MAP.get(nome) if img_data is None: print(f"❌ Nessuna immagine associata a {nome}, salto.") continue visualizza_confronti_immagini(classe_modello , img_data["best_image"], img_data["worst_image"]) 
+if img_data is None:
+    print(f"❌ Nessuna immagine associata a {nome}, salto.")
+    continue
 ```
 and keeping this one active:
 ```python 
