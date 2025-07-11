@@ -44,19 +44,22 @@ Visual comparisons were then performed using the methods `visualizza_pred_reale`
 ![EfficientNet-B0 backbone](imgs/tabella_effnet.png)
 
 For example, the best prediction of the second-best model `EFFNETB0_UNLOCK_DROP_EFFK_6` yielded the following results:
+
 ![EfficientNet-B0 and EfficientKan layer](imgs/EFFK_6_BEST_METRICHE.png)
+
 The comparison between the worst predictions of the two top-performing models instead revealed that the best one is `EFFNETB0_UNLOCK_DROP_FOURIER_6`:
 
-|![Real mesh](imgs/tab_real_mesh.png)|![Fourier_6](imgs/pine.png)|![EfficientKan_6](imgs/tab_effkan.png)|
+|![Real mesh](imgs/tab_real_mesh.png)|![Fourier_6](imgs/tab_fourier.png)|![EfficientKan_6](imgs/tab_effkan.png)|
 |:-:|:-:|:-:|
 |Real Mesh|Fourier_6|EfficientKan_6|
 
 With the following predicted parameters:
+
 ![Parametri predetti](imgs/tabella_parametri_confronto.png)
 
 Even more interesting is the final comparison between the best-performing model `EFFNETB0_UNLOCK_DROP_FOURIER_6` and the two models used to evaluate the performance difference between KAN and MLP layers `SQUEEZENET_DROP4_CLASSICA_DROP_256` and `SQUEEZENET_DROP4_FOURIER_DROP_256`, sover three randomly selected test set images. Only the networks equipped with KAN layers showed superior performance in approximation, in particular the last image poses an interesting question as to what to reward when working with neural networks, the pure observation of metrics (like the neural network `EFFNETB0_UNLOCK_DROP_EFFK_6`) or going beyond what has been learnt and generalising as best as possible, as the truncated cone-shaped point in the picture was never encountered during training and only `EFFNETB0_UNLOCK_DROP_FOURIER_6` ha  attempted, mistakenly, to approximate it.
 
-![Confronto su 3 immagini dei migliori modelli](imgs/confronto_finale.png)
+![Confronto su 3 immagini dei migliori modelli](imgs/confronto_finale.svg)
 
 ## Installation
 
